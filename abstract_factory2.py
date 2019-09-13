@@ -47,52 +47,58 @@ class Coupe(ABC):
 	def creating_coupe(self):
 		pass
 # ----------------------------------------------------------
-class Gla(Suv):
+class Gla(Suv, Benz):
 	def creating_suv(self):
 		print('This is your suv Benz Gla...')
 
-class Glc(Suv):
+class Glc(Suv, Benz):
 	def creating_suv(self):
 		print('This is your suv Benz Glc...')
 
-class X1(Suv):
+class X1(Suv, Bmw):
 	def creating_suv(self):
 		print('This is your suv Bmw X1...')
 
-class X2(Suv):
+class X2(Suv, Bmw):
 	def creating_suv(self):
 		print('This is your suv Bmw X2...')
 # ----------------------------------------------------------
-class Cls(Coupe):
+class Cls(Coupe, Benz):
 	def creating_coupe(self):
 		print('This is your coupe Benz Cls...')
 
-class Eclass(Coupe):
+class Eclass(Coupe, Benz):
 	def creating_coupe(self):
 		print('This is your coupe Benz E-class...')
 
-class M2(Coupe):
+class M2(Coupe, Bmw):
 	def creating_coupe(self):
 		print('This is your coupe Bmw M2...')
 
-class M4(Coupe):
+class M4(Coupe, Bmw):
 	def creating_coupe(self):
 		print('This is your coupe Bmw M4...')
 # ----------------------------------------------------------
 def OrderSuv(corp, model):
-	suv = corp().call_suv(model())
-	suv.creating_suv()
+	if issubclass(model, corp):
+		suv = corp().call_suv(model())
+		suv.creating_suv()
+	else:
+		raise NameError()
 
 def OrderCoupe(corp, model):
-	coupe = corp().call_coupe(model())
-	coupe.creating_coupe()
+	if issubclass(model, corp):
+		coupe = corp().call_coupe(model())
+		coupe.creating_coupe()
+	else:
+		raise NameError()
 
 try:
-	OrderCoupe(Benz, Eclass)
+	OrderCoupe(Benz, Cls)
 except (NameError, AttributeError):
 	print('Sorry, we dont have this model....')
 
 try:
-	OrderSuv(Bmw, X3)
+	OrderSuv(Bmw, Glc)
 except (NameError, AttributeError):
 	print('Sorry, we dont have this model....')
