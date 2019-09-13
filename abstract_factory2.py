@@ -79,8 +79,8 @@ class M4(Coupe, Bmw):
 	def creating_coupe(self):
 		print('This is your coupe Bmw M4...')
 # ----------------------------------------------------------
-def OrderSuv(corp, model):
-	if issubclass(model, corp):
+def OrderSuv(corp, model): # corp is the company, model is the model of the car
+	if issubclass(model, corp): # check if the model is related to corp, so you cannot call M2 from Benz
 		suv = corp().call_suv(model())
 		suv.creating_suv()
 	else:
@@ -95,7 +95,7 @@ def OrderCoupe(corp, model):
 
 try:
 	OrderCoupe(Benz, Cls)
-except (NameError, AttributeError):
+except (NameError, AttributeError): # calling Corporation incorrectly will raise NameError, calling Model incorrectly will raise AttributeError
 	print('Sorry, we dont have this model....')
 
 try:
