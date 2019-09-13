@@ -88,11 +88,11 @@ def OrderCoupe(corp, model):
 	coupe.creating_coupe()
 
 try:
-	OrderCoupe(Bmw, M2)
-except:
+	OrderCoupe(Benz, Eclass)
+except (NameError, AttributeError):
 	print('Sorry, we dont have this model....')
 
 try:
-	OrderSuv(Bmw, M2)
-except:
+	OrderSuv(Bmw, X3)
+except (NameError, AttributeError):
 	print('Sorry, we dont have this model....')
