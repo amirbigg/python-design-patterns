@@ -57,28 +57,28 @@ class Cat(World):
 		self.name = name
 
 	def show(self):
-		print(f'\t\tAnimal Leaf {self.name}')
+		print(f'\t\tCat Leaf {self.name}')
 
 class Dog(World):
 	def __init__(self, name):
 		self.name = name
 
 	def show(self):
-		print(f'\t\tAnimal Leaf {self.name}')
+		print(f'\t\tDog Leaf {self.name}')
 
 class Male(World):
 	def __init__(self, name):
 		self.name = name
 
 	def show(self):
-		print(f'\t\tHuman Leaf {self.name}')
+		print(f'\t\tMale Leaf {self.name}')
 
 class Female(World):
 	def __init__(self, name):
 		self.name = name
 
 	def show(self):
-		print(f'\t\tHuman Leaf {self.name}')
+		print(f'\t\tFemale Leaf {self.name}')
 
 cat = Cat('Missy')
 dog = Dog('Jack')
