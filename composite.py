@@ -80,31 +80,31 @@ class Female(World):
 	def show(self):
 		print(f'\t\tHuman Leaf {self.name}')
 
-cat1 = Cat('Missy')
-dog1 = Dog('Jack')
+cat = Cat('Missy')
+dog = Dog('Jack')
 
-male1 = Male('Mark')
-female1 = Female('Jane')
+male = Male('Mark')
+female = Female('Jane')
 
-animal1 = Animal('animal1')
-human1 = Human('human1')
+animal = Animal('animal1')
+human = Human('human1')
 
-animal1.add(cat1)
-animal1.add(dog1)
+animal.add(cat)
+animal.add(dog)
 
-human1.add(male1)
-human1.add(female1)
+human.add(male)
+human.add(female)
 
-being1 = Being('all')
-being1.add(animal1)
-being1.add(human1)
+being = Being('all')
+being.add(animal)
+being.add(human)
 
-being1.show()
+being.show()
 
 # Being Composite all
-# 	Animal Composite animal1
+# 	Animal Composite animal
 # 		Animal Leaf Missy
 # 		Animal Leaf Jack
-# 	Human Composite human1
+# 	Human Composite human
 # 		Human Leaf Mark
 # 		Human Leaf Jane
