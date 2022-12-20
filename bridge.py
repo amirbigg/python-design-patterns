@@ -23,7 +23,7 @@ class Square(Shape): # Refined Abstraction
 		self.color.paint(self.__class__.__name__)
 
 
-class Triangle(Shape):
+class Triangle(Shape): # Refined Abstraction
 	def show(self):
 		self.color.paint(self.__class__.__name__)
 
@@ -43,7 +43,7 @@ class Red(Color): # Concrete Implementation
 		print(f'this is a red {name}')
 
 
-class Yellow(Color):
+class Yellow(Color): # Concrete Implementation
 	def paint(self, name):
 		print(f'this is a yellow {name}')
 
