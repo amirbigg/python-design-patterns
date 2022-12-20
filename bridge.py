@@ -48,6 +48,6 @@ class Yellow(Color): # Concrete Implementation
 		print(f'this is a yellow {name}')
 
 
-blue = Yellow()
-circle = Triangle(blue)
+ylw = Yellow()
+circle = Circle(ylw)
 circle.show()
